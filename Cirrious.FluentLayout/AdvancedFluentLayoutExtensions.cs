@@ -52,6 +52,8 @@ namespace Cirrious.FluentLayouts.Touch
         public static FluentLayout WithRelativeWidth(this UIView view, UIView previous, nfloat? scale = null) =>
 			view.Width().EqualTo().WidthOf(previous).WithMultiplier(scale.GetValueOrDefault(DefaultScale));
 
+				public static FluentLayout WithHeight(this UIView view, nfloat size) => view.Height().EqualTo().Plus(size);
+
         public static FluentLayout WithSameHeight(this UIView view, UIView previous) => view.Height().EqualTo().HeightOf(previous);
 
         public static FluentLayout WithRelativeHeight(this UIView view, UIView previous, nfloat? scale = null) =>
