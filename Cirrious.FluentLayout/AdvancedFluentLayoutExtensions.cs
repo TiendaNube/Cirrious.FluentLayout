@@ -35,6 +35,10 @@ namespace Cirrious.FluentLayouts.Touch
         public static FluentLayout Above(this UIView view, UIView previous, nfloat? margin = null) =>
 			view.Bottom().EqualTo().TopOf(previous).Minus(margin.GetValueOrDefault(DefaultMargin));
 
+				public static FluentLayout CenterXAtTop(this UIView view, UIView previous) => view.CenterX().EqualTo().TopOf(previous);
+
+				public static FluentLayout CenterYAtTop(this UIView view, UIView previous) => view.CenterY().EqualTo().TopOf(previous);
+
         public static FluentLayout WithSameLeft(this UIView view, UIView previous) => view.Left().EqualTo().LeftOf(previous);
 
         public static FluentLayout WithSameTop(this UIView view, UIView previous) => view.Top().EqualTo().TopOf(previous);
